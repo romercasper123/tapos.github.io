@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body{
+			background-image: url(images/bg.png);
+			background-size: cover;
+		}
+		form {
+			position: absolute;
+            left: 15%;  
+			top: 40%;
+            width: 230px;
+			height: 120px;
+			padding: 10px;
+			border: 2px solid #941313;
+			border-radius: 10px;
+			background-color: bisque;
+		}
+		#username{
+			border: 1px solid red;
+			width: 59%;
+		}
+		#password{
+			border: 1px solid red;
+			width: 59%;
+		}
+		#submit{
+			position: absolute;
+            left: 45%;  
+			top: 55%;
+			width: 25%;
+			border: 1px solid red;
+		}
+        .logo1{
+			position: absolute;
+            left: 1%;  
+			top: 90%;
+			width: 80px;
+			border: 1px solid rgb(0, 204, 255);
+			border-radius: 15px;
+			background-color: rgb(21, 17, 216);
+		}
+		.logo2{
+			position: absolute;
+            left: 7%;  
+			top: 90%;
+			width: 80px;
+			height: 50px;
+			border: 1px solid rgb(0, 204, 255);
+			border-radius: 15px;
+			background-color: rgb(180, 88, 157);
+		}
+		.logo3{
+			position: absolute;
+            left: 13%;  
+			top: 90%;
+			width: 80px;
+			height: 50px;
+			border: 1px solid rgb(0, 204, 255);
+			border-radius: 15px;
+			background-color: rgb(83, 117, 209);
+		}
+	</style>
+	<script>
+		function validateForm() {
+		  var username = document.forms["loginForm"]["username"].value;
+		  var password = document.forms["loginForm"]["password"].value;
+		  var isVerified = true; // Replace with your verification logic
+		
+		  if (username === "casper" && password === "casper123") {
+			if (isVerified) {
+			  alert("Your account is verified");
+			  window.location.href = "login.html";
+			  return false;
+			} else {
+			  alert("Your account is not verified");
+			  return false;
+			}
+		  } else {
+			alert("Invalid username or password. Please try again.");
+			return false;
+		  }
+		}
+	</script>
+</head>
+<body>
+	<form name="loginForm" onsubmit="return validateForm()">
+		<label for="username">Username:</label>
+		<input type="text" name="username" id="username"><br><br>
+
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password"><br><br>
+
+		<input type="submit" value="Login" id="submit">
+	</form>
+
+	<div>
+		<a href="https://www.facebook.com">
+			<img src="images/fb.png" alt="Facebook logo" class="logo1">
+		</a>
+		<a href="https://www.instagram.com">
+			<img src="images/insta.png" alt="Instagram logo" class="logo2">
+		</a>
+		<a href="https://twitter.com">
+			<img src="images/twitter.png" alt="Twitter logo" class="logo3">
+		</a>
+	</div>
+</body>
+</html>
